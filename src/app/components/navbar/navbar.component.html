@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a routerLink="/" class="navbar-brand d-flex align-items-center">
+    <img src="/assets/logo.png" width="30" height="30" alt="Logo">
+    <span class="ml-2">Angular Forms</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/plain" routerLinkActive="active">Plain HTML 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/template" routerLinkActive="active">Template Driven</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/reactive" routerLinkActive="active">Reactive</a>
+      </li>
+    </ul>
+  </div>
+</nav>
