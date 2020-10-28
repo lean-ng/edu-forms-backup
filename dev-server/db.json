@@ -1,0 +1,5 @@
+{
+  "users": [
+    { "id": 1, "account": "micha", "email": "mail@michael-alt.info", "password": "V3Ry-S3CrEt!", "zip": "03044" }
+  ]
+}
