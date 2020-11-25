@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PlainFormComponent } from './plain-form.component';
 
@@ -6,7 +6,7 @@ describe('PlainFormComponent', () => {
   let component: PlainFormComponent;
   let fixture: ComponentFixture<PlainFormComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PlainFormComponent ]
     })
