@@ -2,7 +2,7 @@
   <h2>Template Driven Formular</h2>
   <hr>
 </section>
-<form class="p-4" (ngSubmit)="save()">
+<form #frm="ngForm" class="p-4" (ngSubmit)="save()">
   <fieldset>
     <legend>Registrierung</legend>
     <div class="form-group">
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="actions d-flex justify-content-end pt-2">
-      <button type="submit" class="btn btn-primary">Absenden</button>
+      <button [disabled]="frm.invalid" type="submit" class="btn btn-primary">Absenden</button>
     </div>
   </fieldset>
 </form>
