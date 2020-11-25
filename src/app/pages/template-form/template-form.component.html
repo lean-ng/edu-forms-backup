@@ -7,7 +7,7 @@
     <legend>Registrierung</legend>
     <div class="form-group">
       <label for="acc">Account Name</label>
-      <input [(ngModel)]="user.account" name="acc" type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
+      <input #acc="ngModel" [(ngModel)]="user.account" [ngClass]="{'is-invalid': acc.invalid && acc.touched, 'is-valid': acc.valid && acc.touched}" name="acc" type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
       <div class="invalid-feedback">
         Wenigstens drei Zeichen müssen es bitte sein.
       </div>
