@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../../services/api.service';
+import {Observable} from 'rxjs';
+import {Framework} from '../../models/framework.interface';
 
 @Component({
   selector: 'app-plain-form',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlainFormComponent implements OnInit {
 
-  constructor() { }
+  frameworks$: Observable<Framework[]>;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.frameworks$ = this.api.getFrameworks();
   }
-
 }

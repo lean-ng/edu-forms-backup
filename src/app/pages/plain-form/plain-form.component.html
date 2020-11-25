@@ -41,6 +41,16 @@
         Bitte eine korrekte PLZ angeben.
       </div>
     </div>
+    <div class="form-group">
+      <label for="framework">Lieblings SPA-Framework</label>
+      <select class="custom-select" id="framework" required>
+        <option selected disabled value="">Bitte wählen ...</option>
+        <option *ngFor="let fw of frameworks$ | async" [value]="fw.id">{{ fw.name }}</option>
+      </select>
+      <div class="invalid-feedback">
+        Bitte ein Framework auswählen.
+      </div>
+    </div>
     <div class="actions d-flex justify-content-end pt-2">
       <button type="submit" class="btn btn-primary">Absenden</button>
     </div>
