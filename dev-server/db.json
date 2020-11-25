@@ -1,5 +1,29 @@
 {
   "users": [
-    { "id": 1, "account": "micha", "email": "mail@michael-alt.info", "password": "V3Ry-S3CrEt!", "zip": "03044" }
+    {
+      "id": 1,
+      "account": "micha",
+      "email": "mail@michael-alt.info",
+      "password": "V3Ry-S3CrEt!",
+      "zip": "03044",
+      "frameworkId": 1
+    }
+  ],
+  "frameworks": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "url": "https://angular.io"
+    },
+    {
+      "id": 2,
+      "name": "React",
+      "url": "https://reactjs.org/"
+    },
+    {
+      "id": 3,
+      "name": "Vue.js",
+      "url": "https://vuejs.org/"
+    }
   ]
 }
