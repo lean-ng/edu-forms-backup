@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display project title', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular Forms');
+  it('should display project title', async () => {
+    await page.navigateTo();
+    expect(await page.getTitleText()).toEqual('Angular Forms');
   });
 
   afterEach(async () => {
