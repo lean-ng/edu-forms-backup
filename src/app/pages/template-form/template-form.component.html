@@ -7,14 +7,14 @@
     <legend>Registrierung</legend>
     <div class="form-group">
       <label for="acc">Account Name</label>
-      <input #acc="ngModel" [(ngModel)]="user.account" [ngClass]="{'is-invalid': acc.invalid && acc.touched, 'is-valid': acc.valid && acc.touched}" name="acc" type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
+      <input #acc="ngModel" [(ngModel)]="user.account" bsFeedback name="acc" type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
       <div class="invalid-feedback">
         Wenigstens drei Zeichen müssen es bitte sein.
       </div>
     </div>
     <div class="form-group">
       <label for="email">Email Adresse</label>
-      <input [(ngModel)]="user.email" name="email" type="email" required class="form-control" id="email" aria-describedby="emailHelp"
+      <input [(ngModel)]="user.email" name="email" bsFeedback type="email" required class="form-control" id="email" aria-describedby="emailHelp"
              placeholder="Enter email">
       <div class="invalid-feedback">
         Ungültige Email-Adresse
@@ -24,18 +24,18 @@
     </div>
     <div class="form-group">
       <label for="pw1">Passwort</label>
-      <input [(ngModel)]="user.password" name="pw1" type="password" minlength="8" required class="form-control" id="pw1" placeholder="Password">
+      <input [(ngModel)]="user.password" bsFeedback name="pw1" type="password" minlength="8" required class="form-control" id="pw1" placeholder="Password">
     </div>
     <div class="form-group">
       <label for="pw2">Passwort (Wiederholung)</label>
-      <input [(ngModel)]="repeatedPassword" name="pw2" type="password" class="form-control" id="pw2" placeholder="Password">
+      <input [(ngModel)]="repeatedPassword" bsFeedback name="pw2" type="password" class="form-control" id="pw2" placeholder="Password">
       <div class="invalid-feedback">
         Passwörter stimmen nicht überein.
       </div>
     </div>
     <div class="form-group">
       <label for="zip">PLZ</label>
-      <input [(ngModel)]="user.zip" name="zip" type="text" pattern="\d{5}" class="form-control" id="zip"
+      <input [(ngModel)]="user.zip" bsFeedback name="zip" type="text" pattern="\d{5}" class="form-control" id="zip"
              placeholder="Postleitzahl">
       <div class="invalid-feedback">
         Bitte eine korrekte PLZ angeben.
@@ -43,7 +43,7 @@
     </div>
     <div class="form-group">
       <label for="framework">Lieblings SPA-Framework</label>
-      <select [(ngModel)]="user.framework" name="fw" class="custom-select" id="framework" required>
+      <select bsFeedback [(ngModel)]="user.framework" name="fw" class="custom-select" id="framework" required>
         <option selected disabled value="">Bitte wählen ...</option>
         <option *ngFor="let fw of frameworks$ | async" [value]="fw.id">{{ fw.name }}</option>
       </select>

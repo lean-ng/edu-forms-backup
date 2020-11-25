@@ -10,6 +10,7 @@ import { PlainFormComponent } from './pages/plain-form/plain-form.component';
 import { TemplateFormComponent } from './pages/template-form/template-form.component';
 import { ReactiveFormComponent } from './pages/reactive-form/reactive-form.component';
 import {FormsModule} from '@angular/forms';
+import { BsFeedbackDirective } from './directives/bs-feedback.directive';
 
 const appRoutes: Route[] = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -25,7 +26,8 @@ const appRoutes: Route[] = [
     HomeComponent,
     PlainFormComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    BsFeedbackDirective
   ],
   imports: [
     BrowserModule,
