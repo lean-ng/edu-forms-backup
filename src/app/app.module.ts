@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PlainFormComponent } from './pages/plain-form/plain-form.component';
 import { TemplateFormComponent } from './pages/template-form/template-form.component';
 import { ReactiveFormComponent } from './pages/reactive-form/reactive-form.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Route[] = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -29,7 +30,8 @@ const appRoutes: Route[] = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
