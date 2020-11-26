@@ -12,6 +12,7 @@ import { ReactiveFormComponent } from './pages/reactive-form/reactive-form.compo
 import {FormsModule} from '@angular/forms';
 import { BsFeedbackDirective } from './directives/bs-feedback.directive';
 import { MatchDirective } from './validators/match.directive';
+import { UniqueAccountDirective } from './validators/unique-account.directive';
 
 const appRoutes: Route[] = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -29,7 +30,8 @@ const appRoutes: Route[] = [
     TemplateFormComponent,
     ReactiveFormComponent,
     BsFeedbackDirective,
-    MatchDirective
+    MatchDirective,
+    UniqueAccountDirective
   ],
   imports: [
     BrowserModule,

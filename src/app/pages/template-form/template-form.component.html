@@ -7,9 +7,9 @@
     <legend>Registrierung</legend>
     <div class="form-group">
       <label for="acc">Account Name</label>
-      <input #acc="ngModel" [(ngModel)]="user.account" bsFeedback name="acc" type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
+      <input #acc="ngModel" [(ngModel)]="user.account" [ngModelOptions]="{updateOn: 'blur'}" bsFeedback uniqueAccount name="acc" type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
       <div class="invalid-feedback">
-        Wenigstens drei Zeichen müssen es bitte sein.
+        {{ acc.errors?.uniqueAccount ? 'Account ist leider schon vergeben.' : 'Wenigstens drei Zeichen müssen es bitte sein.' }}
       </div>
     </div>
     <div class="form-group">
