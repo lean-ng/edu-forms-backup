@@ -11,17 +11,9 @@ import {User} from '../../models/user.interface';
 })
 export class TemplateFormComponent implements OnInit {
 
-  // Model
-  user: User = { account: '', email: '', password: '', framework: null };
-  repeatedPassword = '';
-
   frameworks$: Observable<Framework[]>;
 
   constructor(private api: ApiService) { }
-
-  save() {
-    console.log(this.user);
-  }
 
   ngOnInit() {
     this.frameworks$ = this.api.getFrameworks();

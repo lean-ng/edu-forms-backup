@@ -1,21 +1,21 @@
 <section>
-  <h2>Template Driven Formular</h2>
+  <h2>Plain HTML Formular</h2>
   <hr>
 </section>
-<form #frm="ngForm" class="p-4" (ngSubmit)="save()">
+<form class="p-4">
   <fieldset>
     <legend>Registrierung</legend>
     <div class="form-group">
       <label for="acc">Account Name</label>
-      <input #acc="ngModel" [(ngModel)]="user.account" [ngModelOptions]="{updateOn: 'blur'}" bsFeedback uniqueAccount name="acc" type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
+      <input type="text" required minlength="3" class="form-control" id="acc" placeholder="Enter account name">
       <div class="invalid-feedback">
-        {{ acc.errors?.uniqueAccount ? 'Account ist leider schon vergeben.' : 'Wenigstens drei Zeichen müssen es bitte sein.' }}
+        Wenigstens drei Zeichen müssen es bitte sein.
       </div>
     </div>
     <div class="form-group">
       <label for="email">Email Adresse</label>
-      <input [(ngModel)]="user.email" email name="email" bsFeedback type="email" required class="form-control" id="email" aria-describedby="emailHelp"
-             placeholder="Enter email">
+      <input type="email" required class="form-control" id="email" aria-describedby="emailHelp"
+        placeholder="Enter email">
       <div class="invalid-feedback">
         Ungültige Email-Adresse
       </div>
@@ -24,26 +24,26 @@
     </div>
     <div class="form-group">
       <label for="pw1">Passwort</label>
-      <input [(ngModel)]="user.password" bsFeedback name="pw1" type="password" minlength="8" required class="form-control" id="pw1" placeholder="Password">
+      <input type="password" minlength="8" required class="form-control" id="pw1" placeholder="Password">
     </div>
     <div class="form-group">
       <label for="pw2">Passwort (Wiederholung)</label>
-      <input [(ngModel)]="repeatedPassword" match="pw1" bsFeedback name="pw2" type="password" class="form-control" id="pw2" placeholder="Password">
+      <input type="password" class="form-control" id="pw2" placeholder="Password">
       <div class="invalid-feedback">
         Passwörter stimmen nicht überein.
       </div>
     </div>
     <div class="form-group">
       <label for="zip">PLZ</label>
-      <input [(ngModel)]="user.zip" bsFeedback name="zip" type="text" pattern="\d{5}" class="form-control" id="zip"
-             placeholder="Postleitzahl">
+      <input type="text" pattern="\d{5}" class="form-control" id="zip"
+        placeholder="Postleitzahl">
       <div class="invalid-feedback">
         Bitte eine korrekte PLZ angeben.
       </div>
     </div>
     <div class="form-group">
       <label for="framework">Lieblings SPA-Framework</label>
-      <select bsFeedback [(ngModel)]="user.framework" name="fw" class="custom-select" id="framework" required>
+      <select class="custom-select" id="framework" required>
         <option selected disabled value="">Bitte wählen ...</option>
         <option *ngFor="let fw of frameworks$ | async" [value]="fw.id">{{ fw.name }}</option>
       </select>
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="actions d-flex justify-content-end pt-2">
-      <button [disabled]="frm.invalid" type="submit" class="btn btn-primary">Absenden</button>
+      <button type="submit" class="btn btn-primary">Absenden</button>
     </div>
   </fieldset>
 </form>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Framework } from 'src/app/models/framework.interface';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-reactive-form',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReactiveFormComponent implements OnInit {
 
-  constructor() { }
+  frameworks$: Observable<Framework[]>;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.frameworks$ = this.api.getFrameworks();
   }
-
 }
